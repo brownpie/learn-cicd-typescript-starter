@@ -23,7 +23,7 @@ describe("getAPIKey", () => {
   test("returns null if Authorization header is only 'ApiKey'", () => {
     const headers = { authorization: "ApiKey" };
     const key = getAPIKey(headers);
-    expect(key).toBeNull();
+    expect(key).toBeNull("wrong-value"));
   });
 
   test("returns the API key when correct format is provided", () => {
