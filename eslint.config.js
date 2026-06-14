@@ -3,6 +3,7 @@ import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import { defineConfig } from "eslint/config";
+import pluginSecurity from "eslint-plugin-security";
 
 export default defineConfig([
   {
@@ -21,6 +22,8 @@ export default defineConfig([
     rules: {
       ...js.configs.recommended.rules,
       ...tsPlugin.configs.recommended.rules,
+      ...pluginSecurity.configs.recommended.rules,
     },
   },
+  pluginSecurity.configs.recommended,
 ]);
